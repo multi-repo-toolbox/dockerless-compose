@@ -17,12 +17,12 @@ Commands:
   build              Build or rebuild services
   config             Validate and view the Compose file
   create             Create services
-  down               Stop and remove containers, networks, images, and volumes
-  events             Receive real time events from containers
+  down               Stop and remove applications/containers, networks, images, and volumes
+  events             Receive real time events from applications/containers
   exec               Execute a command in a running container
   help               Get help on a command
   images             List images
-  kill               Kill containers
+  kill               Kill applications/containers
   log, logs          View output (stdout+stderr) from services
   pause              Pause services
   port               Print the public port for a port binding
@@ -32,12 +32,12 @@ Commands:
   restart            Restart services
   rm                 Remove stopped services
   run                Run a one-off command
-  scale              Set number of containers for a service
+  scale              Set number of applications/containers for a service
   start              Start services
   stop               Stop services
   top                Display the running processes
   unpause            Unpause services
-  up                 Create and start containers
+  up                 Create and start applications/containers
   version            Show version information and quit
 `
 )

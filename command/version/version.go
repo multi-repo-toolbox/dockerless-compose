@@ -1,8 +1,9 @@
 package version
 
 import (
-	"flag"
 	"fmt"
+
+	"github.com/spf13/pflag"
 )
 
 var (
@@ -22,7 +23,7 @@ func (*Command) Desc() string {
 	return "Show version information and quit"
 }
 
-func (*Command) Flags() *flag.FlagSet {
+func (*Command) Flags() *pflag.FlagSet {
 	return nil
 }
 

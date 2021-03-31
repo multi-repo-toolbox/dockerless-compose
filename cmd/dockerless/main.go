@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/multi-repo-toolbox/dockerless-compose/command"
+	"github.com/multi-repo-toolbox/dockerless-compose/command/up"
 	"github.com/multi-repo-toolbox/dockerless-compose/command/version"
 	"github.com/multi-repo-toolbox/dockerless-compose/config"
 	"github.com/spf13/pflag"
@@ -28,23 +29,21 @@ func main() {
 		pflag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, commands)
 	}
+	pflag.CommandLine = pflag.NewFlagSet(os.Args[0], pflag.ContinueOnError)
 	pflag.Parse()
 	if pflag.NArg() < 1 {
 		usageAndExit("select a command")
 	}
-	processOptions()
+	config.Setup(*configFile)
 	allCommands()
 	if *help {
 		command.Help(pflag.Arg(0))
 		return
 	}
-	command.Process(pflag.Arg(0))
-}
-
-func processOptions() {
-	config.Setup(*configFile)
+	command.Process(pflag.Arg(0), os.Args)
 }
 
 func allCommands() {
 	command.Register(new(version.Command))
+	command.Register(new(up.Command))
 }

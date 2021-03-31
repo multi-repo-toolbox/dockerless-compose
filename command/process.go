@@ -4,8 +4,13 @@ import "fmt"
 
 var registry = make(map[string]Commander)
 
-func Process(name string) {
+func Process(name string, args []string) {
+	//	name := args[0]
 	if c, ok := registry[name]; ok {
+		fs := c.Flags()
+		if fs != nil {
+			fs.Parse(args)
+		}
 		c.Action()
 	}
 }
