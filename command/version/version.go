@@ -3,6 +3,7 @@ package version
 import (
 	"fmt"
 
+	"github.com/multi-repo-toolbox/dockerless-compose/config"
 	"github.com/spf13/pflag"
 )
 
@@ -27,7 +28,11 @@ func (*Command) Flags() *pflag.FlagSet {
 	return nil
 }
 
-func (c *Command) Action() error {
+func (*Command) Config() (*config.Configuration, error) {
+	return nil, nil
+}
+
+func (c *Command) Action(*config.Configuration) error {
 	fmt.Println(AppName, "version", Version)
 	return nil
 }

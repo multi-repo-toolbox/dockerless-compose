@@ -34,13 +34,15 @@ func main() {
 	if pflag.NArg() < 1 {
 		usageAndExit("select a command")
 	}
-	config.Setup(*configFile)
+	config.SetName(*configFile)
 	allCommands()
 	if *help {
 		command.Help(pflag.Arg(0))
 		return
 	}
-	command.Process(pflag.Arg(0), os.Args)
+	if err := command.Process(pflag.Arg(0), os.Args); err != nil {
+		errExit(err)
+	}
 }
 
 func allCommands() {

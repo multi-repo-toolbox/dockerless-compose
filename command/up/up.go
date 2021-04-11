@@ -1,6 +1,9 @@
 package up
 
-import "github.com/spf13/pflag"
+import (
+	"github.com/multi-repo-toolbox/dockerless-compose/config"
+	"github.com/spf13/pflag"
+)
 
 type Command struct {
 	detached *bool
@@ -20,7 +23,11 @@ func (c *Command) Flags() *pflag.FlagSet {
 	return fs
 }
 
-func (c *Command) Action() error {
+func (*Command) Config() (*config.Configuration, error) {
+	return config.LoadFile()
+}
+
+func (c *Command) Action(*config.Configuration) error {
 	if *c.detached {
 		print("XXX detached")
 	}

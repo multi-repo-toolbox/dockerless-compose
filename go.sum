@@ -5,8 +5,8 @@ github.com/kr/pretty v0.2.1/go.mod h1:ipq/a2n7PKx3OHsz4KJII5eveXtPO4qwEXGdVfWzfn
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0 h1:45sCR5RtlFHMR4UwH9sdQ5TC8v0qDQCHnXt+kaKSTVE=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
-github.com/multi-repo-toolbox/config v0.0.0-20210321220050-f1e05cb8b743 h1:m23XUmyrzyTJ/frp7wuk+clBkWT4gFdGujOt8iHQipY=
-github.com/multi-repo-toolbox/config v0.0.0-20210321220050-f1e05cb8b743/go.mod h1:9vgE8k1LHiFaf7ItpbLXGlMXvvW9ooYx1YMK8E0PbMc=
+github.com/multi-repo-toolbox/fileconf v0.0.0-20210411215813-52c217c6f7a5 h1:KZH82opgdSr2XGFvwrAvn/2drBCyIuyofWox+xNQl3k=
+github.com/multi-repo-toolbox/fileconf v0.0.0-20210411215813-52c217c6f7a5/go.mod h1:EG7GKrF9V7Pf8Ex0QxarTX0AJsfddsCnNabNJaLdXLk=
 github.com/spf13/pflag v1.0.5 h1:iy+VFUOCP1a+8yFto/drg2CJ5u0yRoB7fZw3DKv/JXA=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=

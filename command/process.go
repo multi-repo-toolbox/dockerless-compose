@@ -1,18 +1,26 @@
 package command
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 var registry = make(map[string]Commander)
+var errCmdNotFound = errors.New("command not found")
 
-func Process(name string, args []string) {
-	//	name := args[0]
+func Process(name string, args []string) error {
 	if c, ok := registry[name]; ok {
 		fs := c.Flags()
 		if fs != nil {
 			fs.Parse(args)
 		}
-		c.Action()
+		cfg, err := c.Config()
+		if err != nil {
+			return err
+		}
+		return c.Action(cfg)
 	}
+	return errCmdNotFound
 }
 
 func Help(name string) {
